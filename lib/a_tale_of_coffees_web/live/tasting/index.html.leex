@@ -1,18 +1,19 @@
 <div>
-<p>What kind of brew whould you like to share?</p>
-    <%= f = form_for @changeset, "#", phx_change: "validate", phx_target: @myself, id: "brew-form", phx_submit: "save" %>
+<p class="text-xl">What kind of brew whould you like to share?</p>
+    <%= f = form_for @changeset, "#", phx_change: "validate", phx_target: @myself, id: "brew-form", phx_submit: "save", class: "flex flex-col space-y-3" %>
+
         <%= label f, :title %>
-        <%= text_input f, :title %>
+        <%= text_input f, :title, class: "rounded px-3 py-1", placeholder: "The beverage" %>
         <%= error_tag f, :title %>
 
         <%= label f, :description %>
-        <%= text_input f, :description %>
+        <%= textarea f, :description, class: "rounded px-3 py-1", placeholder: "The enjoyment" %>
         <%= error_tag f, :description %>
 
         <%= label f, :created_by %>
-        <%= text_input f, :created_by %>
+        <%= text_input f, :created_by, class: "rounded px-3 py-1", placeholder: "The who" %>
         <%= error_tag f, :created_by %>
 
-        <%= submit "Save it", phx_disable_with: "Saving..." %>
+        <%= submit "Share it", phx_disable_with: "Sharing..." ,class: "rounded bg-blue-500 p-3 text-white font-bold text-lg uppercase" %>
     </form>
 </div>

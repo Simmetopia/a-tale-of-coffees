@@ -1,5 +1,13 @@
-<section class="phx-hero">
-<%= live_component @socket, ATaleOfCoffeesWeb.Tasting.Index, id: :new_coffee_form %>
-</section>
+<article class="flex flex-col space-y-10">
+    <section class="phx-hero">
+        <%= live_component @socket, ATaleOfCoffeesWeb.Tasting.Index, id: :new_coffee_form %>
+    </section>
 
-<%= live_component @socket, ATaleOfCoffeesWeb.Tasting.ListOfTastings, brews: @brews %>
+    <section class="flex flex-col space-y-3">
+        <div>
+            <h3 class="text-3xl">Currently others are drinking:</h3>
+            <h6 class="italic text-sm">This updates realtime with a 2 hour timeout</h6>
+        </div>
+        <%= live_component @socket, ATaleOfCoffeesWeb.Tasting.ListOfTastings, brews: @brews %>
+    </section>
+</article>
