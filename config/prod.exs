@@ -10,7 +10,7 @@ use Mix.Config
 # which you should run after static files are built and
 # before starting your production server.
 config :a_tale_of_coffees, ATaleOfCoffeesWeb.Endpoint,
-  url: [host: "example.com", port: 80],
+  url: [host: "ataleofcoffees.gigalixirapp.com", port: 80],
   cache_static_manifest: "priv/static/cache_manifest.json"
 
 # Do not print debug messages in production
@@ -45,8 +45,7 @@ config :logger, level: :info
 # We also recommend setting `force_ssl` in your endpoint, ensuring
 # no data is ever sent via http, always redirecting to https:
 #
-#     config :a_tale_of_coffees, ATaleOfCoffeesWeb.Endpoint,
-#       force_ssl: [hsts: true]
+config :a_tale_of_coffees, ATaleOfCoffeesWeb.Endpoint, force_ssl: [hsts: true]
 #
 # Check `Plug.SSL` for all available options in `force_ssl`.
 
