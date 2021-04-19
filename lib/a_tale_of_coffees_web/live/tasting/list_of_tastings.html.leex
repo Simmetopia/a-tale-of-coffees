@@ -1,0 +1,18 @@
+<div class="grid grid-cols-3 gap-3">
+    <%= for brew <- @brews do %>
+    <div class="bg-white p-3 shadow rounded grid grid-cols-1">
+        <div class="flex flex-row gap-3">
+            Title:
+            <%= brew.title %>
+        </div>
+        <div class="flex flex-row gap-3">
+            Description:
+            <%= brew.description %>
+        </div>
+        <div class="flex flex-row gap-3">
+            <span>Enjoyed by:</span>
+            <%= brew.created_by %>
+        </div>
+    </div>
+    <% end %>
+</div>

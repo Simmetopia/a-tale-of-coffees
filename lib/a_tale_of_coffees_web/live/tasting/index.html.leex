@@ -1,0 +1,18 @@
+<div>
+<p>What kind of brew whould you like to share?</p>
+    <%= f = form_for @changeset, "#", phx_change: "validate", phx_target: @myself, id: "brew-form", phx_submit: "save" %>
+        <%= label f, :title %>
+        <%= text_input f, :title %>
+        <%= error_tag f, :title %>
+
+        <%= label f, :description %>
+        <%= text_input f, :description %>
+        <%= error_tag f, :description %>
+
+        <%= label f, :created_by %>
+        <%= text_input f, :created_by %>
+        <%= error_tag f, :created_by %>
+
+        <%= submit "Save it", phx_disable_with: "Saving..." %>
+    </form>
+</div>

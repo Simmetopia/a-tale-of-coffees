@@ -1,0 +1,5 @@
+<section class="phx-hero">
+<%= live_component @socket, ATaleOfCoffeesWeb.Tasting.Index, id: :new_coffee_form %>
+</section>
+
+<%= live_component @socket, ATaleOfCoffeesWeb.Tasting.ListOfTastings, brews: @brews %>
