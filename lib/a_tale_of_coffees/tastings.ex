@@ -31,7 +31,9 @@ defmodule ATaleOfCoffees.Tastings do
 
   """
   def list_brews do
-    Repo.all(from u in Brew, where: u.inserted_at > ago(2, "hour"))
+    Repo.all(
+      from u in Brew, where: u.inserted_at > ago(2, "hour"), order_by: [desc: u.inserted_at]
+    )
   end
 
   @doc """

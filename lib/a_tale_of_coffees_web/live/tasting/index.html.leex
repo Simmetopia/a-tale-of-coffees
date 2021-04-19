@@ -2,11 +2,11 @@
 <p class="text-xl">What kind of brew whould you like to share?</p>
     <%= f = form_for @changeset, "#", phx_change: "validate", phx_target: @myself, id: "brew-form", phx_submit: "save", class: "flex flex-col space-y-3" %>
 
-        <%= label f, :title %>
+        <%= label f, :title, "Brew" %>
         <%= text_input f, :title, class: "rounded px-3 py-1", placeholder: "The beverage" %>
         <%= error_tag f, :title %>
 
-        <%= label f, :description %>
+        <%= label f, :description, "Enjoyment" %>
         <%= textarea f, :description, class: "rounded px-3 py-1", placeholder: "The enjoyment" %>
         <%= error_tag f, :description %>
 
