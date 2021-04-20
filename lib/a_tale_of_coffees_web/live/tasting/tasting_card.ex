@@ -24,7 +24,7 @@ defmodule ATaleOfCoffeesWeb.Tasting.TastingCard do
         <div class="flex flex-row gap-3">
             <span>enjoyed by:</span>
             <%= @brew.created_by %> at
-            <%= "#{zero_pad(@brew.inserted_at.hour)}:#{zero_pad(@brew.inserted_at.second)}" %>
+            <%= "#{zero_pad(@brew.inserted_at.hour + 2)}:#{zero_pad(@brew.inserted_at.second)}" %>
         </div>
         <div class="flex flex-row justify-end">
           <a href="#" phx-click="inc_likes" phx-target="<%= @myself %>" >
