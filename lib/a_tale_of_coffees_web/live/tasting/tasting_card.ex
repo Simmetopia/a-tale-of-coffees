@@ -24,7 +24,7 @@ defmodule ATaleOfCoffeesWeb.Tasting.TastingCard do
         <div class="flex flex-row gap-3">
             <span>enjoyed by:</span>
             <%= @brew.created_by %> at
-            <%= "#{@brew.inserted_at.hour + 1}:#{@brew.inserted_at.second}" %>
+            <%= "#{zero_pad(@brew.inserted_at.hour)}:#{zero_pad(@brew.inserted_at.second)}" %>
         </div>
         <div class="flex flex-row justify-end">
           <a href="#" phx-click="inc_likes" phx-target="<%= @myself %>" >
@@ -33,5 +33,11 @@ defmodule ATaleOfCoffeesWeb.Tasting.TastingCard do
         </div<
     </div>
     """
+  end
+
+  defp zero_pad(number, amount \\ 2) do
+    number
+    |> Integer.to_string()
+    |> String.pad_leading(amount, "0")
   end
 end
