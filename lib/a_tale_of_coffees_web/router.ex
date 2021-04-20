@@ -18,6 +18,7 @@ defmodule ATaleOfCoffeesWeb.Router do
     pipe_through :browser
 
     live "/", PageLive, :index
+    live "/archive", ArchiveLive, :index
   end
 
   # Other scopes may use custom stacks.

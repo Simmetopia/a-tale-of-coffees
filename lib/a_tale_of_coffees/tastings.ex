@@ -36,6 +36,10 @@ defmodule ATaleOfCoffees.Tastings do
     )
   end
 
+  def list_all_brews do
+    Repo.all(Brew)
+  end
+
   @doc """
   Gets a single brew.
 

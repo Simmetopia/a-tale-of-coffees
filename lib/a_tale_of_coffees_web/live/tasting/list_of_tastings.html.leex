@@ -10,8 +10,9 @@
             <%= brew.description %>
         </div>
         <div class="flex flex-row gap-3">
-            <span>Enjoyed by:</span>
-            <%= brew.created_by %>
+            <span>enjoyed by:</span>
+            <%= brew.created_by %> at
+            <%= "#{brew.inserted_at.hour + 1}:#{brew.inserted_at.second}" %>
         </div>
     </div>
     <% end %>

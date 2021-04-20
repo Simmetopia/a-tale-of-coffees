@@ -10,8 +10,10 @@
     <script defer phx-track-static type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </head>
   <body class="min-w-screen min-h-screen bg-gray-100">
-  <div class="shadow bg-white h-24 flex items-center justify-center">
-    <h1 class="text-3xl font-bold"> A tale of coffees </h1>
+  <div class="shadow bg-white h-24 grid grid-cols-6 place-items-center px-1 md:px-24">
+  <a href="/" class="rounded shadow p-3 ">⚡</a>
+    <h1 class="text-xl md:text-3xl col-span-4 font-bold"> A tale of coffees </h1>
+    <a href="/archive" class="rounded shadow p-3">🗃️</a>
   </div>
     <%= @inner_content %>
   </body>
