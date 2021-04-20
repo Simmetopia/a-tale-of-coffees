@@ -8,6 +8,11 @@ defmodule ATaleOfCoffeesWeb.ArchiveLive do
   end
 
   @impl true
+  def handle_info({:brew_updated, brew} = _params, socket) do
+    {:noreply, socket |> update(:brews, fn brews -> [brew | brews] end)}
+  end
+
+  @impl true
   def render(assigns) do
     ~L"""
       <div>
