@@ -4,6 +4,7 @@ defmodule ATaleOfCoffeesWeb.ArchiveLive do
 
   @impl true
   def mount(_params, _session, socket) do
+    Tastings.subscribe()
     {:ok, socket |> assign(brews: Tastings.list_all_brews())}
   end
 
