@@ -37,7 +37,7 @@ defmodule ATaleOfCoffees.Tastings do
   end
 
   def list_all_brews do
-    Repo.all(Brew)
+    Repo.all(from b in Brew, order_by: [desc: b.inserted_at], limit: 50)
   end
 
   @doc """
@@ -91,6 +91,13 @@ defmodule ATaleOfCoffees.Tastings do
     brew
     |> Brew.changeset(attrs)
     |> Repo.update()
+  end
+
+  def inc_likes(%Brew{id: id}) do
+    {1, [brew]} =
+      from(b in Brew, where: b.id == ^id, select: b) |> Repo.update_all(inc: [likes: 1])
+
+    broadcast({:ok, brew}, :brew_updated)
   end
 
   @doc """

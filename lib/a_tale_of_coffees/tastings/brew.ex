@@ -6,6 +6,7 @@ defmodule ATaleOfCoffees.Tastings.Brew do
     field :created_by, :string
     field :description, :string
     field :title, :string
+    field :likes, :integer, default: 0
 
     timestamps()
   end
@@ -13,7 +14,7 @@ defmodule ATaleOfCoffees.Tastings.Brew do
   @doc false
   def changeset(brew, attrs) do
     brew
-    |> cast(attrs, [:title, :description, :created_by])
+    |> cast(attrs, [:title, :description, :created_by, :likes])
     |> validate_required([:title, :description, :created_by])
   end
 end
